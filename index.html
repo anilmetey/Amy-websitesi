@@ -1,30 +1,29 @@
 <!DOCTYPE html>
-<html lang="tr" class="">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anıl Mete Yıldız | Kişisel Web Sitesi</title>
+    <title>Anıl Mete Yıldız | Yazılım Geliştirici </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
-<body class="transition-all">
-    <button class="btn btn-secondary theme-toggle"> Açık Ton</button>
+<body>
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg shadow-sm py-3">
         <div class="container">
-            <a class="navbar-brand fw-semibold brand-logo" href="#">
-                <span class="amy">AMY</span> <span class="soft">SOFT</span>
+            <a class="navbar-brand fw-bold fs-3 text-dark d-flex align-items-center" href="#">
+                <img src="images/amy-logo.jpg" alt="AMY SOFT Logo" class="amy-logo me-2" /> Kişisel Web Sitem
             </a>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#about">Hakkımda</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Yetenekler</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projeler</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">İletişim</a></li>
@@ -32,84 +31,71 @@
             </div>
         </div>
     </nav>
-    <!-- Hero Alanı -->
-    <header class="hero text-center">
+
+    <header class="hero bg-light text-center py-5">
         <div class="container">
-            <h1>Anıl Mete Yıldız</h1>
-            <p>Bilgisayar Mühendisi</p>
+            <img src="images/amy-logo.jpg" alt="Anıl Mete Yıldız" class="hero-img rounded-circle shadow-sm mb-4" width="160" />
+            <h1 class="hero-title fw-bold">Anıl Mete Yıldız</h1>
+            <p class="hero-desc text-secondary">Bilgisayar Mühendisliği Öğrencisi • Yapay Zeka & Web Geliştirme Uzmanı</p>
         </div>
     </header>
 
-    <!-- Hakkımda -->
-    <section class="container my-5" id="about" data-aos="fade-up">
-        <h2>Hakkımda</h2>
-        <p>Ben Anıl, yapay zeka, veritabanı ve web geliştirme alanlarında kendini sürekli geliştiren tutkulu bir yazılım geliştiricisiyim.</p>
+    <section class="container py-5" id="about">
+        <h2 class="fs-2">Hakkımda</h2>
+        <p class="lead fs-5">Merhaba, ben Anıl. Yapay zeka, veritabanı yönetimi ve modern web teknolojileri alanlarında kendini sürekli güncel tutan, yenilikçi çözümler geliştiren ve kullanıcı odaklı projelere imza atan bir yazılım geliştiricisiyim.</p>
     </section>
 
-    <!-- Yetenekler -->
-    <section class="container my-5" id="skills" data-aos="fade-up">
-        <h2>Yetenekler</h2>
-        <ul class="skills">
-            <li>Java</li>
-            <li>C#</li>
-            <li>ASP.NET</li>
-            <li>SQL</li>
-            <li>Git & Docker</li>
-            <li>Python</li>
-            <li>Html & Css</li>
-        </ul>
-    </section>
-
-    <!-- Projeler -->
-    <section class="container my-5" id="projects" data-aos="fade-up">
-        <h2 style="margin-bottom: 30px;">Projeler</h2>
-        <div class="card mb-3" data-aos="flip-left">
-            <div class="card-body">
-                <h5 class="card-title">Yapay Zeka Botu</h5>
-                <p class="card-text">Geliştirilme aşamasında...</p>
+    <section class="container py-5 bg-light rounded" id="skills">
+        <h2 class="fs-2">Yetenekler</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Java</li>
+                    <li class="list-group-item">C# & ASP.NET Core</li>
+                    <li class="list-group-item">SQL & Veritabanı Yönetimi</li>
+                </ul>
             </div>
-        </div>
-        <div class="card mb-3" data-aos="flip-right">
-            <div class="card-body">
-                <h5 class="card-title">Blog CMS</h5>
-                <p class="card-text">ASP.NET ile geliştirilmiş içerik yönetim sistemi.</p>
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Python</li>
+                    <li class="list-group-item">HTML, CSS & JavaScript</li>
+                    <li class="list-group-item">Git & Docker</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- İletişim -->
-    <section class="container my-5" id="contact" data-aos="fade-up">
-        <h2>İletişim</h2>
-        <p>Email: <a href="mailto:anilmetey@gmail.com">anilmetey@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/anilmetey/anilmetey">github.com/anilmetey</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/anıl-mete-yıldız-b76129234/">linkedin.com/in/anıl-mete-yıldız</a></p>
+    <section class="container py-5" id="projects">
+        <h2 class="fs-2">Projeler</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Mod Durumu</h5>
+                        <p class="card-text">Next.js ile geliştirilmiş mod durum uygulaması</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Not Uygulaması</h5>
+                        <p class="card-text">ASP.NET Core ve SQL Server kullanılarak geliştirilen tam kapsamlı not sistemi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a href="https://github.com/anilmetey" class="btn btn-dark">Tüm Projeleri Görüntüle</a>
+        </div>
     </section>
 
-    <!-- Alıntı -->
-    <section class="text-center my-5" data-aos="fade-in">
-        <blockquote class="fs-5 fst-italic">
-            "Her satır kod, daha iyi bir yarın için bir adımdır."
-        </blockquote>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Anıl Mete Yıldız. Tüm hakları saklıdır.</p>
+    <footer class="text-center py-4  text-dark">
+        &copy; 2025 Anıl Mete Yıldız. Tüm hakları saklıdır.
     </footer>
 
-    <!-- Scriptler -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            AOS.init();
-            const toggleBtn = document.querySelector('.theme-toggle');
-            toggleBtn.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
-                toggleBtn.textContent = document.body.classList.contains('dark-mode') ? ' Koyu Ton' : ' Açık Ton';
-            });
-        });
-    </script>
+
 </body>
 
 </html>
