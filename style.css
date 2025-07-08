@@ -1,26 +1,17 @@
 :root {
-    --main-bg: #f8f9fa;
-    --main-text: #212529;
-    --section-bg: #ffffff;
+    --main-bg: linear-gradient( 135deg, rgba(85, 169, 187, 0.8), rgba(71, 74, 110, 0));
+    --main-text: #000000;
+    --section-bg: #83a9c3;
     --card-bg: #ffffff;
-    --hero-bg: linear-gradient(135deg, #004e92, #000428);
-    --footer-bg: #f1f1f1;
-}
-
-.dark-mode {
-    --main-bg: #282828;
-    --main-text: #f1f1f1;
-    --section-bg: #494949;
-    --card-bg: #2e2e2e;
-    --hero-bg: linear-gradient(135deg, #000000, #111111);
-    --footer-bg: #1a1a1a;
+    --hero-bg: linear-gradient(135deg, #e8cece, #dee1ff);
+    --footer-bg: linear-gradient( 135deg, rgba(39, 69, 81, 0.8), rgba(0, 0, 0, 0));
 }
 
 body {
     font-family: 'Outfit', sans-serif;
-    background-color: var(--main-bg);
+    background: var(--main-bg);
     color: var(--main-text);
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background 0.8s ease, color 0.8s ease;
 }
 
 .container {
@@ -29,11 +20,38 @@ body {
 }
 
 .hero {
-    background: var(--hero-bg);
-    color: white;
-    padding: 100px 0 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 0 48px 0;
+    background: var(--main-bg);
+}
+
+.hero-img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    margin-bottom: 18px;
+    background: var(--white);
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: var(--main-text);
     text-align: center;
-    transition: background 0.5s ease;
+}
+
+.hero-desc {
+    color: #444;
+    font-size: 1.18rem;
+    margin-top: 0;
+    text-align: center;
 }
 
 section {
@@ -61,13 +79,13 @@ section h2::before {
     top: 7px;
     width: 6px;
     height: 24px;
-    background-color: #0d6efd;
+    background-color: #000000;
     border-radius: 3px;
 }
 
 .skills li {
     display: inline-block;
-    background: #0d6efd;
+    background: #5b5c5d;
     color: white;
     padding: 10px 16px;
     margin: 8px;
@@ -91,7 +109,7 @@ section h2::before {
 }
 
 footer {
-    background-color: var(--footer-bg);
+    background-color: var(--main-bg);
     color: var(--main-text);
     text-align: center;
     padding: 20px 0;
@@ -118,7 +136,7 @@ a {
 }
 
 a:hover {
-    color: #0d6efd;
+    color: #000000;
 }
 
 .navbar {
@@ -134,15 +152,41 @@ a:hover {
     font-size: 1.2rem;
 }
 
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.navbar-brand .amy-logo {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .amy-logo {
+    transform: scale(1.05);
+}
+
+@media (max-width: 576px) {
+    .navbar-brand .amy-logo {
+        display: none;
+    }
+}
+
 .navbar .nav-link {
     color: var(--main-text) !important;
     font-weight: 500;
-    margin-left: 12px;
+    margin-left: 8px;
     transition: color 0.3s ease;
 }
 
 .navbar .nav-link:hover {
-    color: #0d6efd !important;
+    color: #2c2c67 !important;
 }
 
 blockquote {
@@ -150,7 +194,7 @@ blockquote {
     font-weight: 500;
     font-style: italic;
     padding: 1rem;
-    border-left: 4px solid #0d6efd;
+    border-left: 6px solid #000000;
     background-color: rgba(13, 110, 253, 0.05);
     transition: background-color 0.3s ease;
 }
@@ -167,13 +211,13 @@ blockquote {
 
 .brand-logo .amy {
     font-weight: 800;
-    color: #0d6efd;
+    color: #2c1212;
     font-family: 'Outfit', sans-serif;
 }
 
 .brand-logo .soft {
     font-weight: 800;
-    color: #0d6efd;
+    color: #2c1212;
     margin-left: 4px;
     font-family: 'Outfit', sans-serif;
 }
