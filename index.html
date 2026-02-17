@@ -4,87 +4,219 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Anıl Mete Yıldız | Yazılım Geliştirici</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Anıl Mete Yıldız | Yazılım Geliştirici & Bilgisayar Mühendisi</title>
+    <meta name="description" content="Anıl Mete Yıldız - Bilgisayar Mühendisliği öğrencisi, mobil ve web geliştirici. Modern teknolojilerle profesyonel yazılım çözümleri." />
+    <meta name="keywords" content="Anıl Mete Yıldız, yazılım geliştirici, mobil uygulama, web geliştirme, Flutter, Kotlin, yapay zeka" />
+    <meta property="og:title" content="Anıl Mete Yıldız | Yazılım Geliştirici" />
+    <meta property="og:description" content="Modern teknolojilerle profesyonel yazılım çözümleri üreten bilgisayar mühendisi." />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="images/amy-logo.jpg" alt="AMY Logo" class="amy-logo me-2" />
-                <span class="brand-text">AMY<span class="text-accent">SOFT</span></span>
+    <!-- Floating Particles Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a class="nav-brand" href="#">
+                <div class="brand-logo">
+                    <img src="images/amy-logo.jpg" alt="AMY Logo" class="brand-img" />
+                    <div class="brand-ring"></div>
+                </div>
+                <span class="brand-text">AMY<span class="brand-accent">SOFT</span></span>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="nav-toggle" id="navToggle" aria-label="Menüyü Aç">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#about">Hakkımda</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Yetenekler</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projeler</a></li>
-                    <li class="nav-item"><a class="nav-link btn-contact" href="#contact">İletişim</a></li>
-                    <li class="nav-item ms-3">
-                        <button class="theme-toggle" aria-label="Temayı Değiştir">
-                            <i class="fas fa-moon"></i>
-                        </button>
-                    </li>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link" data-text="Hakkımda">Hakkımda</a></li>
+                    <li><a href="#skills" class="nav-link" data-text="Yetenekler">Yetenekler</a></li>
+                    <li><a href="#projects" class="nav-link" data-text="Projeler">Projeler</a></li>
+                    <li><a href="#contact" class="nav-link nav-link-cta">
+                        <i class="fas fa-paper-plane"></i> İletişim
+                    </a></li>
                 </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Temayı Değiştir">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                    <div class="toggle-bg"></div>
+                </button>
             </div>
         </div>
     </nav>
 
-    <header class="hero d-flex align-items-center justify-content-center text-center">
-        <div class="container" data-aos="fade-up">
-            <div class="hero-content">
-                <div class="img-wrapper mb-4">
-                    <img src="images/amy-logo.jpg" alt="Anıl Mete Yıldız" class="hero-img" />
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+                <div class="hero-avatar">
+                    <div class="avatar-wrapper">
+                        <img src="images/amy-logo.jpg" alt="Anıl Mete Yıldız" class="avatar-img" />
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-pulse"></div>
+                    </div>
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        Müsait
+                    </div>
                 </div>
 
-                <h1 class="hero-title">
-                    <span class="text-gradient-animated">Anıl Mete Yıldız</span>
-                </h1>
+                <div class="hero-text">
+                    <p class="hero-greeting">Merhaba, ben</p>
+                    <h1 class="hero-name">
+                        <span class="name-line">Anıl Mete</span>
+                        <span class="name-line name-accent">Yıldız</span>
+                    </h1>
+                    <div class="hero-typing">
+                        <span class="typing-prefix">&lt;</span>
+                        <span class="typing-text" id="typingText"></span>
+                        <span class="typing-cursor">|</span>
+                        <span class="typing-suffix">/&gt;</span>
+                    </div>
+                    <p class="hero-desc">Bilgisayar Mühendisliği Öğrencisi & Modern Mobil ve Web Geliştiricisi</p>
+                </div>
 
-                <p class="hero-desc">Bilgisayar Mühendisliği Öğrencisi & <br> Modern Mobil & Web Geliştiricisi</p>
-                <div class="hero-buttons mt-4">
-                    <a href="#projects" class="btn btn-primary btn-lg me-3">Projelerimi Gör</a>
-                    <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-lg">
-                        <i class="fab fa-github"></i> GitHub
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <span>Projelerimi Keşfet</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anıl-mete-yıldız-b76129234" target="_blank" rel="noopener noreferrer" class="btn btn-glass">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
                     </a>
                 </div>
             </div>
+
+            <div class="hero-visual" data-aos="fade-left" data-aos-duration="1400" data-aos-delay="200">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span class="dot dot-red"></span>
+                            <span class="dot dot-yellow"></span>
+                            <span class="dot dot-green"></span>
+                        </div>
+                        <span class="code-filename">developer.ts</span>
+                    </div>
+                    <div class="code-body">
+                        <pre><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-prop">name</span>: <span class="code-string">"Anıl Mete Yıldız"</span>,
+  <span class="code-prop">title</span>: <span class="code-string">"Full-Stack Developer"</span>,
+  <span class="code-prop">skills</span>: [
+    <span class="code-string">"Kotlin"</span>, <span class="code-string">"Flutter"</span>,
+    <span class="code-string">"C#"</span>, <span class="code-string">"Python"</span>,
+    <span class="code-string">"JavaScript"</span>
+  ],
+  <span class="code-prop">passion</span>: <span class="code-string">"Yapay Zeka 🤖"</span>,
+  <span class="code-prop">coffee</span>: <span class="code-keyword">Infinity</span> ☕
+};</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>Keşfet</span>
         </div>
     </header>
 
-    <section class="section-padding" id="about">
+    <!-- About Section -->
+    <section class="section" id="about">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="section-title">Hakkımda</h2>
-                    <p class="lead text-muted">Teknoloji ile sanatın kesiştiği noktada kod yazıyorum.</p>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge"><i class="fas fa-user"></i> Hakkımda</span>
+                <h2 class="section-title">Teknoloji ile Sanatın<br><span class="text-gradient">Kesiştiği Noktada</span></h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right" data-aos-delay="100">
                     <p class="about-text">
-                        Merhaba, ben Anıl. Yazılım dünyasında, özellikle yapay zeka entegrasyonları, mobil uygulama geliştirme ve modern web mimarileri üzerine çalışıyorum. Karmaşık problemleri basit, estetik ve kullanıcı dostu arayüzlere dönüştürmeyi seviyorum. Sürekli öğrenme
-                        tutkum, beni her gün daha iyi kod yazmaya itiyor.
+                        Merhaba! Ben <strong>Anıl</strong>. Yazılım dünyasında, özellikle <em>yapay zeka entegrasyonları</em>,
+                        <em>mobil uygulama geliştirme</em> ve <em>modern web mimarileri</em> üzerine çalışıyorum.
                     </p>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="about-stats d-flex gap-4 justify-content-center mt-4 mt-lg-0">
-                        <div class="stat-box text-center">
-                            <i class="fas fa-code fa-2x mb-2 text-accent"></i>
-                            <h4>3+</h4>
-                            <small>Yıllık Tecrübe</small>
+                    <p class="about-text">
+                        Karmaşık problemleri basit, estetik ve kullanıcı dostu arayüzlere dönüştürmeyi seviyorum.
+                        Sürekli öğrenme tutkum, beni her gün daha iyi kod yazmaya itiyor.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Hızlı Öğrenen</span>
                         </div>
-                        <div class="stat-box text-center">
-                            <i class="fas fa-project-diagram fa-2x mb-2 text-accent"></i>
-                            <h4>10+</h4>
-                            <small>Tamamlanan Proje</small>
+                        <div class="highlight-item">
+                            <i class="fas fa-palette"></i>
+                            <span>UI/UX Odaklı</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Clean Code</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Problem Çözücü</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-stats" data-aos="fade-left" data-aos-delay="200">
+                    <div class="stat-card stat-card-primary">
+                        <div class="stat-icon"><i class="fas fa-code"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-count="3">0</h3>
+                            <span class="stat-plus">+</span>
+                            <p class="stat-label">Yıllık Tecrübe</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-accent">
+                        <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-count="10">0</h3>
+                            <span class="stat-plus">+</span>
+                            <p class="stat-label">Tamamlanan Proje</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-card-success">
+                        <div class="stat-icon"><i class="fas fa-mug-hot"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" data-count="999">0</h3>
+                            <span class="stat-plus">+</span>
+                            <p class="stat-label">Fincan Kahve</p>
                         </div>
                     </div>
                 </div>
@@ -92,85 +224,310 @@
         </div>
     </section>
 
-    <section class="section-padding bg-light-alt" id="skills">
-        <div class="container" data-aos="fade-up">
-            <h2 class="section-title text-center mb-5">Teknik Yetenekler</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="skills-wrapper text-center">
-                        <span class="skill-tag"><i class="fab fa-android"></i> Kotlin</span>
-                        <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
-                        <span class="skill-tag"><i class="fab fa-microsoft"></i> C# & .NET Core</span>
-                        <span class="skill-tag"><i class="fas fa-database"></i> SQL & Veritabanı</span>
-                        <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-                        <span class="skill-tag"><i class="fab fa-html5"></i> HTML5 & CSS3</span>
-                        <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
-                        <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-                        <span class="skill-tag"><i class="fas fa-brain"></i> Yapay Zeka</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" id="projects">
+    <!-- Skills Section -->
+    <section class="section section-alt" id="skills">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Seçilmiş Projeler</h2>
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="card-body">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-gamepad"></i>
-                            </div>
-                            <h5 class="card-title">Mod Durumu</h5>
-                            <p class="card-text">Next.js ile geliştirilmiş, oyuncular için mod takip ve durum uygulaması. Modern UI ve hızlı veri akışı.</p>
-                            <a href="#" class="read-more">İncele <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="project-card">
-                        <div class="card-body">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-sticky-note"></i>
-                            </div>
-                            <h5 class="card-title">Not Uygulaması</h5>
-                            <p class="card-text">ASP.NET Core ve SQL Server mimarisi üzerine kurulu, güvenli ve ölçeklenebilir not yönetim sistemi.</p>
-                            <a href="#" class="read-more">İncele <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge"><i class="fas fa-cogs"></i> Yetenekler</span>
+                <h2 class="section-title">Teknik <span class="text-gradient">Arsenal</span></h2>
+                <p class="section-desc">Sürekli gelişen ve genişleyen teknoloji yığınım</p>
             </div>
-            <div class="text-center mt-5">
-                <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark px-4 py-2">
-                    <i class="fab fa-github me-2"></i>Tüm Projeleri Görüntüle
-                </a>
+
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #a855f7;">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h4 class="skill-name">Kotlin</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 85%; --bar-color: #a855f7;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #f97316;">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h4 class="skill-name">Java</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 80%; --bar-color: #f97316;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #6366f1;">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h4 class="skill-name">C# & .NET</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 75%; --bar-color: #6366f1;"></div>
+                    </div>
+                    <span class="skill-level">Orta-İleri</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #06b6d4;">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4 class="skill-name">SQL</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 78%; --bar-color: #06b6d4;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #3b82f6;">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h4 class="skill-name">Python</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 82%; --bar-color: #3b82f6;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #e34c26;">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h4 class="skill-name">HTML & CSS</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 90%; --bar-color: #e34c26;"></div>
+                    </div>
+                    <span class="skill-level">Uzman</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #f7df1e;">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h4 class="skill-name">JavaScript</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 85%; --bar-color: #f7df1e;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #f05032;">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h4 class="skill-name">Git</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 80%; --bar-color: #f05032;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #02569B;">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4 class="skill-name">Flutter</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 85%; --bar-color: #02569B;"></div>
+                    </div>
+                    <span class="skill-level">İleri Seviye</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #777BB4;">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h4 class="skill-name">PHP</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 72%; --bar-color: #777BB4;"></div>
+                    </div>
+                    <span class="skill-level">Orta-İleri</span>
+                </div>
+
+                <div class="skill-card" data-tilt>
+                    <div class="skill-icon" style="--skill-color: #10b981;">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h4 class="skill-name">Yapay Zeka</h4>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress: 70%; --bar-color: #10b981;"></div>
+                    </div>
+                    <span class="skill-level">Orta-İleri</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-4" id="contact">
+    <!-- Projects Section -->
+    <section class="section" id="projects">
         <div class="container">
-            <div class="social-links mb-3">
-                <a href="https://www.linkedin.com/in/anıl-mete-yıldız-b76129234" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Hesabım">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer" aria-label="GitHub Hesabım">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge"><i class="fas fa-rocket"></i> Projeler</span>
+                <h2 class="section-title">Seçilmiş <span class="text-gradient">Çalışmalar</span></h2>
+                <p class="section-desc">En son tamamladığım ve üzerinde çalıştığım projeler</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-card-header">
+                        <div class="project-icon project-icon-purple">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-icon" aria-label="Proje Linki"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Mod Durumu</h3>
+                    <p class="project-desc">Next.js ile geliştirilmiş, oyuncular için mod takip ve durum uygulaması. Modern UI ve hızlı veri akışı.</p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">React</span>
+                        <span class="tag">API</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card-header">
+                        <div class="project-icon project-icon-blue">
+                            <i class="fas fa-sticky-note"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-icon" aria-label="Proje Linki"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Not Uygulaması</h3>
+                    <p class="project-desc">ASP.NET Core ve SQL Server mimarisi üzerine kurulu, güvenli ve ölçeklenebilir not yönetim sistemi.</p>
+                    <div class="project-tags">
+                        <span class="tag">ASP.NET</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">SQL Server</span>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card-header">
+                        <div class="project-icon project-icon-emerald">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link-icon" aria-label="Proje Linki"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Semptom Uygulaması</h3>
+                    <p class="project-desc">Kullanıcıların semptomlarını girerek olası sağlık durumlarını analiz eden, yapay zeka destekli mobil sağlık asistanı.</p>
+                    <div class="project-tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Yapay Zeka</span>
+                        <span class="tag">Dart</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
                     <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:anilmetey@gmail.com" aria-label="Bana E-posta Gönder">
-                    <i class="fas fa-envelope"></i>
+                    <span>Tüm Projeleri Görüntüle</span>
+                    <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
-            <p class="mb-0">&copy; 2025 Anıl Mete Yıldız. <br class="d-md-none">Tüm hakları saklıdır.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-badge"><i class="fas fa-envelope"></i> İletişim</span>
+                <h2 class="section-title">Birlikte <span class="text-gradient">Çalışalım</span></h2>
+                <p class="section-desc">Bir proje fikriniz mi var? Birlikte harika işler çıkaralım!</p>
+            </div>
+
+            <div class="contact-cards-centered" data-aos="fade-up" data-aos-delay="100">
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <h4>E-posta</h4>
+                        <a href="mailto:anilmetey@gmail.com">anilmetey@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/anıl-mete-yıldız-b76129234" target="_blank" rel="noopener noreferrer">Anıl Mete Yıldız</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-card-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="contact-card-content">
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer">@anilmetey</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/amy-logo.jpg" alt="AMY Logo" />
+                        <span>AMY<span class="brand-accent">SOFT</span></span>
+                    </div>
+                    <p class="footer-tagline">Kod ile hayalleri gerçeğe dönüştürüyorum.</p>
+                </div>
+
+                <div class="footer-nav">
+                    <h5>Sayfalar</h5>
+                    <ul>
+                        <li><a href="#about">Hakkımda</a></li>
+                        <li><a href="#skills">Yetenekler</a></li>
+                        <li><a href="#projects">Projeler</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h5>Beni Takip Et</h5>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/anıl-mete-yıldız-b76129234" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon social-linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/anilmetey" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="social-icon social-github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:anilmetey@gmail.com" aria-label="E-posta" class="social-icon social-email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anıl Mete Yıldız. Tüm hakları saklıdır.</p>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Yukarı Dön">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="script.js"></script>
-
 </body>
 
 </html>
