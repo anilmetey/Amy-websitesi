@@ -1360,7 +1360,7 @@ html.light-mode .btn-glass:hover {
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--accent-1);
+    border: 2px solid var(--accent-1); 
 }
 
 .footer-logo span {
