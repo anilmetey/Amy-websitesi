@@ -2,9 +2,17 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command }) => ({
+export default defineConfig({
   plugins: [react()],
-  // Localde (dev) '/' kullanarak localhost:5173 beyaz ekranını engeller.
-  // Canlı build alındığında GitHub Pages için '/Amy-websitesi/' kullanır.
-  base: command === 'build' ? '/Amy-websitesi/' : '/',
-}));
+  base: './',
+  build: {
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        entryFileNames: 'assets/index.js',
+        chunkFileNames: 'assets/[name].js',
+        assetFileNames: 'assets/[name].[ext]',
+      },
+    },
+  },
+});
