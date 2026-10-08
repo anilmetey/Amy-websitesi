@@ -8,6 +8,9 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     rollupOptions: {
+      input: {
+        main: 'dev.index.html',
+      },
       output: {
         entryFileNames: 'assets/index.js',
         chunkFileNames: 'assets/[name].js',
