@@ -116,7 +116,7 @@ export const Interactive3DAvatar: React.FC<Interactive3DAvatarProps> = ({
         initial={{ opacity: 0, y: 10, scale: 0.9 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.3 }}
-        className="mb-2 z-40 flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#16181D]/90 border border-[#B600A8]/60 text-xs sm:text-sm font-bold text-white shadow-2xl backdrop-blur-md"
+        className="mb-3 lg:mb-2 max-w-full z-40 flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#16181D]/90 border border-[#B600A8]/60 text-xs sm:text-sm text-center font-bold text-white shadow-2xl backdrop-blur-md"
       >
         <span className="text-base animate-bounce">{currentData.badgeIcon}</span>
         <span className="bg-gradient-to-r from-white via-[#D7E2EA] to-[#B600A8] bg-clip-text text-transparent">
@@ -189,7 +189,7 @@ export const Interactive3DAvatar: React.FC<Interactive3DAvatarProps> = ({
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.94 }}
               transition={{ duration: 0.3 }}
-              className="w-[220px] sm:w-[260px] md:w-[310px] lg:w-[360px] xl:w-[400px] max-h-[50vh] sm:max-h-[54vh] object-cover pointer-events-none drop-shadow-[0_25px_60px_rgba(182,0,168,0.35)]"
+              className="w-[clamp(220px,65vw,300px)] sm:w-[310px] md:w-[340px] lg:w-[360px] xl:w-[400px] aspect-square lg:aspect-auto lg:max-h-[54vh] object-cover pointer-events-none drop-shadow-[0_25px_60px_rgba(182,0,168,0.35)]"
             />
           </AnimatePresence>
 
@@ -199,14 +199,15 @@ export const Interactive3DAvatar: React.FC<Interactive3DAvatarProps> = ({
       </div>
 
       {/* 3. İKİLİ ETKİLEŞİMLİ SEGMENTED MODEL SEÇİCİ (GARANTİ TIKLANABİLİR Z-50) */}
-      <div className="mt-4 p-1.5 rounded-full bg-[#121316]/90 border border-white/15 backdrop-blur-xl shadow-2xl flex items-center gap-1 z-50 pointer-events-auto">
+      <div className="mt-4 w-full max-w-[320px] lg:w-auto lg:max-w-none p-1.5 rounded-full bg-[#121316]/90 border border-white/15 backdrop-blur-xl shadow-2xl flex items-center gap-1 z-50 pointer-events-auto">
         <button
           onClick={(e) => {
             e.stopPropagation();
             onSelectModel('waving');
           }}
           type="button"
-          className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer ${
+          aria-pressed={currentModel === 'waving'}
+          className={`flex-1 lg:flex-none min-h-11 lg:min-h-0 flex items-center justify-center gap-1.5 px-2 lg:px-3.5 py-1.5 rounded-full text-xs whitespace-nowrap font-semibold transition-all duration-300 cursor-pointer ${
             currentModel === 'waving'
               ? 'bg-gradient-to-r from-[#B600A8] to-[#7621B0] text-white shadow-md scale-105'
               : 'text-[#D7E2EA]/60 hover:text-white hover:bg-white/5'
@@ -222,7 +223,8 @@ export const Interactive3DAvatar: React.FC<Interactive3DAvatarProps> = ({
             onSelectModel('studio');
           }}
           type="button"
-          className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer ${
+          aria-pressed={currentModel === 'studio'}
+          className={`flex-1 lg:flex-none min-h-11 lg:min-h-0 flex items-center justify-center gap-1.5 px-2 lg:px-3.5 py-1.5 rounded-full text-xs whitespace-nowrap font-semibold transition-all duration-300 cursor-pointer ${
             currentModel === 'studio'
               ? 'bg-gradient-to-r from-[#7621B0] to-cyan-600 text-white shadow-md scale-105'
               : 'text-[#D7E2EA]/60 hover:text-white hover:bg-white/5'
