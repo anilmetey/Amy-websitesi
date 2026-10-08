@@ -30,7 +30,15 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
       });
     }, intervalTime);
 
-    return () => clearInterval(timer);
+    const safetyTimer = setTimeout(() => {
+      setIsDone(true);
+      onComplete();
+    }, 2600);
+
+    return () => {
+      clearInterval(timer);
+      clearTimeout(safetyTimer);
+    };
   }, [onComplete]);
 
   const getStatusText = (p: number) => {
