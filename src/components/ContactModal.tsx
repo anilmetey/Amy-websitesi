@@ -33,14 +33,14 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
           {/* Arka Plan Karartması */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-black/85 backdrop-blur-md"
+            className="fixed inset-0 bg-black/85 backdrop-blur-md"
           />
 
           {/* Modal İçeriği */}
@@ -49,7 +49,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-2xl bg-[#121316] border border-[#2A2E35] rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl overflow-hidden z-10"
+            className="relative w-full max-w-2xl bg-[#121316] border border-[#2A2E35] rounded-3xl p-5 sm:p-8 md:p-10 shadow-2xl max-h-[90vh] sm:max-h-[85vh] overflow-y-auto my-auto z-10 custom-scrollbar"
           >
             {/* Üst Dekoratif Renk Parıltısı */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-24 bg-gradient-to-r from-[#B600A8]/20 via-[#7621B0]/30 to-[#38bdf8]/20 blur-3xl pointer-events-none" />
